@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2018 at 01:12 AM
+-- Generation Time: Jan 30, 2018 at 01:57 AM
 -- Server version: 5.7.14
 -- PHP Version: 7.0.10
 
@@ -197,7 +197,10 @@ CREATE TABLE `visitors` (
 INSERT INTO `visitors` (`id`, `fname`, `lname`, `email`, `mobile`, `position`, `avatar`, `company_id`, `created_at`, `updated_at`) VALUES
 (1, 'Mike', 'Ross', 'Mike@Company.com', '07xxxxxxxx', 'CEO', 'Mike', 1, NULL, NULL),
 (2, 'John ', 'Doe', 'John@Johncompany.com', '074xxxxxxx', 'Sales Manager', 'john', 2, NULL, NULL),
-(3, 'Emily', 'Martin', 'emaily@somecompany.com', '077xxxxxxx', 'Web Designer', 'Emily', 1, NULL, NULL);
+(3, 'Emily', 'Martin', 'emaily@somecompany.com', '077xxxxxxx', 'Web Designer', 'Emily', 1, NULL, NULL),
+(4, 'Martin', 'Jacob', 'Martin@martincompany.com', '07xxxxxxxx', 'IT Manager', 'Martin', 1, NULL, NULL),
+(5, 'Layla', 'Hasan', 'layla@hercompany.com', '074xxxxxxxx', 'Marketing team', 'Layla', 2, NULL, NULL),
+(6, 'Romany', 'Sefen', 'romanyfayiez@hotmail.com', '7342978488', '073424545656', NULL, 1, '2018-01-30 01:55:53', '2018-01-30 01:55:53');
 
 -- --------------------------------------------------------
 
@@ -316,7 +319,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `visits`
 --

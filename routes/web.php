@@ -38,3 +38,5 @@ Route::get('visits/delete/{visit}','VisitController@destroy')->name('visit.destr
 **
 */
 Route::get('/visitors/all','VisitorController@index')->name('visitor.all');
+Route::get('/visitor/create','VisitorController@create')->name('visitor.create');
+Route::post('/visitor/create','VisitorController@store');

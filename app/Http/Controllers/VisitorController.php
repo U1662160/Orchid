@@ -27,7 +27,7 @@ class VisitorController extends Controller
      */
     public function create()
     {
-        //
+        return view('visitor.create');
     }
 
     /**
@@ -38,7 +38,23 @@ class VisitorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request,[
+          'fname'=>'required|max:50|min:3',
+          'lname'=>'required|max:50|min:3',
+          'email'=>'required|email',
+          'mobile'=>'required',
+          'position'=>'required',
+          'company'=>'required',
+        ]);
+     visitor::create([
+       'fname'=>$request->input('fname'),
+       'lname'=>$request->input('lname'),
+       'email'=>$request->input('email'),
+       'mobile'=>$request->input('mobile'),
+       'position'=>$request->input('position'),
+       'company_id'=>$request->input('company'),
+     ]);
+     return redirect()->back()->with('success','New visitor added');
     }
 
     /**

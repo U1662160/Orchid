@@ -71,9 +71,9 @@
                     </li>
 
                     <li> <a href="{{route('visitor.all')}}"> All Visitors</a></li>
+                    <li> <a href="{{route('visitor.create')}}"> Add New Visitor</a></li>
 
 
-                
                 @endguest
             </ul>
         </div>

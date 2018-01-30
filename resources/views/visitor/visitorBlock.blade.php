@@ -5,8 +5,6 @@
       <h2 class="help-block">{{$visitor->fname}} {{$visitor->lname}}
         <small class="title"> {{$visitor->position}} </small>
       </h2>
-
-</div>
 <div>
   <table class="table table-hover table-responsive ">
     <tr>
@@ -28,4 +26,6 @@
 <a href="#" class="btn btn-primary ">Send Visit invitation</a>
     </div>
   </div>
-</div>  </div>
+</div>
+</div>
+</div>

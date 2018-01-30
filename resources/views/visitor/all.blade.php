@@ -4,7 +4,7 @@
  @if(!$visitors->count())
  <p class="help-block"> No visitors to Show </p>
  @endif
- <div class="row ">
+ <div class="row">
 @foreach($visitors as $visitor)
 @include('visitor.visitorBlock')
 @endforeach
