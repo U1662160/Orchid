@@ -52,12 +52,12 @@ class VisitController extends Controller
      visit::create([
        'title'=>$request->input('title'),
        'subject'=>$request->input('subject'),
-       'host_id'=>$request->input('host'),
+       'user_id'=>$request->input('host'),
        'visitor_id'=>$request->input('visitor'),
        'date'=>$request->input('date'),
        'start_on'=>$request->input('start'),
        'end_on'=>$request->input('end'),
-       'status'=>'Waiting visitor`s confirmation',
+       'status'=>'pending',
        'refrence'=>uniqid('Sky'),
      ]);
      return redirect()->back()->with('success','New visit added');

@@ -1,6 +1,11 @@
 <div class="card col-md-4 panel">
 
-    <img class="card-img-top" src="../../public/store/avatar/default.png" alt="Card image cap">
+    <img class="card-img-top" src="../../../public/store/avatar/default.png" alt="Card image cap">
+
+
+<!-- src= "{{$_SERVER['PHP_SELF']}}/Orchid/public/store/avatar/default.png"
+src="http:\\localhost\Orchid\public\store\avatar\default.png"
+-->
 
 @if($visit->status == 'pending')
 <div class="card-heading">
@@ -19,10 +24,6 @@
 
     <div class="card-block">
       <h4 class="card-title"><a href="{{route('visit.show',$visit)}}"> {{$visit->title}} </a>
-
-
-
-
 
       </h4>
       <p class="card-text">{{$visit->subject}}.</p>

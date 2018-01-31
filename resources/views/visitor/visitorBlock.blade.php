@@ -1,6 +1,6 @@
 <div class="col-md-4 panel panel-default">
   <div class="card">
-    <img src="../../public/store/avatar/{{($visitor->avatar)? :'default'}}.jpg" alt="visitor" style="width:100%">
+    <img src="../../public/store/avatar/{{($visitor->avatar)? :'default'}}.jpg" alt="visitor" style="width:100%; height:200px">
     <div class="panel-title">
       <h2 class="help-block">{{$visitor->fname}} {{$visitor->lname}}
         <small class="title"> {{$visitor->position}} </small>

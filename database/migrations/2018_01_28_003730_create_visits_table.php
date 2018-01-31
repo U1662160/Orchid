@@ -18,13 +18,13 @@ class CreateVisitsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('subject');
-            $table->integer('host_id');
-            $table->integer('visitor_id');
             $table->date('date');
             $table->time('start_on')->nullable();
             $table->time('end_on')->nulaable();
             $table->string('refrence')->nullable();
             $table->string('status')->nullable();
+            $table->integer('user_id');
+            $table->integer('visitor_id');
             $table->timestamps();
         });
       }

@@ -3,6 +3,7 @@
 namespace Orchid\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Orchid\Models\User;
 
 class Visitor extends Model
 {
@@ -10,6 +11,8 @@ class Visitor extends Model
       'fname','lname','email','mobile','position','avatar','company_id',
     ];
 
-    
+    public function hosts(){
+      return $this->belongsToMany(Orchid\Models\User::class,'users_visitors');
+    }
 
 }
