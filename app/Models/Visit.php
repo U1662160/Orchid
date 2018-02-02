@@ -17,7 +17,13 @@ class Visit extends Model
       'start_on','end_on',
     ];
 
-  public function host(){
-    return $this->belongsTo(Orchid\Models\User::class);
+  public function user(){
+    return $this->belongsTo(\Orchid\Models\User::class);
   }
+
+
+
+   public function visitor(){
+     return $this->belongsTo(\Orchid\Models\Visitor::class);
+   }
 }#

@@ -37,9 +37,29 @@
                                     </span>
                                 @endif
                             </div>
+
+
                         </div>
+                        <div class="form-group{{ $errors->has('dep') ? ' has-error' : '' }}">
+                          <label for="dep" class="col-md-4 control-label">Dep</label>
+                          <div class="col-md-6">
+                              <select class="form-control" name="dep">
+                              <option class="disabled"></option>
+                              <option value="1">Sky TV</option>
+                              <option value="2">Sky Broadband</option>
+                              <option value="3">Sky Talk</option>
+                              <option value="4">Account & Billing</option>
+                              <option value="5">Moving Home</option>
+                            </select>
 
+                              @if ($errors->has('dep'))
+                                  <span class="help-block">
+                                      <strong>{{ $errors->first('dep') }}</strong>
+                                  </span>
+                              @endif
+                          </div>
 
+                        </div>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 

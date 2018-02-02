@@ -47,6 +47,33 @@ Route::post('/visitor/create','VisitorController@store');
     User routes
 **
 */
-Route::get('user/','StaffController@index')->name('user.index')->middleware(['auth']);
+Route::get('user/page','StaffController@index')->name('user.page')->middleware(['auth']);
+
+Route::get('user.details{user}','StaffController@getMyDetails')->name('user.details');
+//future visits
+Route::get('user/futureVisits/{user}','StaffController@myFutureVisits')->name('user.futureVisits');
+//past visits
+Route::get('user/pastVisits/{user}','StaffController@myPastVisits')->name('user.pastVisits');
+//pending visits
+Route::get('user/pendingVisits/{user}','StaffController@myPendingVisits')->name('user.pendingVisits');
+//confirmed visits
+Route::get('user/confirmedVisits/{user}','StaffController@myConfirmedVisits')->name('user.confirmedVisits');
+//My visits
 Route::get('user/myVisits/{user}', 'StaffController@myVisits')->name('user.visits');
+//My visitors
 Route::get('user/myVisitors/{user}', 'StaffController@myVisitors')->name('user.visitors');
+//Show Add new visiotr form
+Route::get('user/addVisitor','StaffController@getAddVisitor')->name('user.addVisitor');
+//post new visitor
+Route::post('user/addVisitor','StaffController@postAddVisitor');
+
+//Show Add new visit form
+Route::get('user/addVisit/{visitor}','StaffController@getAddVisit')->name('user.addVisit');
+
+
+/*
+**
+    DashBoard routes
+**
+*/
+Route::get('dashboard','DashBoardController@index')->name('dashboard')->middleware(['auth']);

@@ -4,10 +4,11 @@
  @if(!$visitors->count())
  <p class="help-block"> No visitors to Show </p>
  @endif
+ {{$visitors->links()}}
  <div class="row">
-@foreach($visitors as $visitor)
-@include('visitor.visitorBlock')
-@endforeach
 
+    @foreach($visitors as $visitor)
+    @include('visitor.visitorBlock')
+    @endforeach
  </div>
 @endsection

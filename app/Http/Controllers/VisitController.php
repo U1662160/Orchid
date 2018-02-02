@@ -4,6 +4,10 @@ namespace Orchid\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Orchid\Models\Visit;
+use Orchid\Models\User;
+use Orchid\Models\Visitor;
+use Auth;
+
 
 class VisitController extends Controller
 {
@@ -22,6 +26,14 @@ class VisitController extends Controller
       return view('visit.all',compact('visits'));
     }
 
+ public function getHost(Visit $visit){
+  return $visit->host()->first();
+ }
+
+
+ public function getGuest(Visit $visit){
+  return $visit->guest()->first();
+ }
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +55,6 @@ class VisitController extends Controller
       $this->validate($request,[
           'title'=>'required|max:255|unique:visits',
           'subject'=>'required|max:255',
-          'host'=>'required',
           'visitor'=>'required',
           'date'=>'required|date | after:today',
           'start'=> 'required',
@@ -52,7 +63,7 @@ class VisitController extends Controller
      visit::create([
        'title'=>$request->input('title'),
        'subject'=>$request->input('subject'),
-       'user_id'=>$request->input('host'),
+       'user_id'=>Auth::user()->id,
        'visitor_id'=>$request->input('visitor'),
        'date'=>$request->input('date'),
        'start_on'=>$request->input('start'),
@@ -95,9 +106,9 @@ class VisitController extends Controller
     public function update(Request $request, Visit $visit)
     {
       $this->validate($request,[
-          'title'=>'required|max:255|unique:visits',
+          'title'=>'required|max:255',
           'subject'=>'required|max:255',
-          'host'=>'required',
+
           'visitor'=>'required',
           'date'=>'required|date | after:today',
           'start'=> 'required',
@@ -106,7 +117,7 @@ class VisitController extends Controller
      $visit->update([
        'title'=>$request->input('title'),
        'subject'=>$request->input('subject'),
-       'host_id'=>$request->input('host'),
+       'host_id'=>Auth::user()->id,
        'visitor_id'=>$request->input('visitor'),
        'date'=>$request->input('date'),
        'start_on'=>$request->input('start'),

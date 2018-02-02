@@ -1,15 +1,12 @@
 @extends('user.dashboard.layout')
 
 @section('dashboard.content')
-
+<h3 class="help-block text-center"> Upcoming Visits </h3>
 <div class="alert">
-
-  {{$visits->links()}}
+  {{$futureVisits->links()}}
 </div>
-
-@foreach($visits as $visit)
-
+@foreach($futureVisits as $visit)
 @include('Visit.visitBlock')
-@endforeach
 
+@endforeach
 @endsection

@@ -1,6 +1,6 @@
-@extends('layouts.app')
-@section('title','my Visits')
-@section('content')
+@extends('user.dashboard.layout')
+
+@section('dashboard.content')
 
 <div class="alert">
 

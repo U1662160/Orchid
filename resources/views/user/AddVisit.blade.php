@@ -1,6 +1,8 @@
-@extends('layouts.app')
-@section('title',' New Invitation')
-@section('content')
+@extends('user.dashboard.layout')
+
+@section('dashboard.content')
+
+
 
     <div class="row help-block">
         <div class="col-md-8 col-md-offset-2">
@@ -42,22 +44,6 @@
                             </div>
                         </div>
 
-
-
-
-                        <div class="form-group{{ $errors->has('visitor') ? ' has-error' : '' }}">
-                            <label for="visitor" class="col-md-4 control-label">Visitor</label>
-
-                            <div class="col-md-6">
-                                <input id="visitor" type="text" class="form-control" name="visitor" value="{{(isset($visitor))? $visitor->id: old('visitor')}}" {{(isset($visitor))? 'readonly' : ' '}} hidden >
-
-                                @if ($errors->has('visitor'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('visitor') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
                         <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
                             <label for="date" class="col-md-4 control-label" value="{{old('date')}}"> Date</label>
@@ -101,7 +87,15 @@
                             </div>
                         </div>
 
+                        <div class="col-md-6">
+                            <input id="visitor" type="hidden" class="form-control" name="visitor" value="{{(isset($visitor))? $visitor->id: old('visitor')}}"   >
 
+                            @if ($errors->has('visitor'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('visitor') }}</strong>
+                                </span>
+                            @endif
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

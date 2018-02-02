@@ -16,7 +16,7 @@ class VisitorController extends Controller
      */
     public function index()
     {
-      $visitors = visitor::orderby('fname')->paginate(6);
+      $visitors = visitor::orderby('fname')->paginate(3);
       return view('visitor.all',compact('visitors'));
     }
 
@@ -102,5 +102,5 @@ class VisitorController extends Controller
         //
     }
 
-    
+
 }

@@ -72,9 +72,9 @@
                               <a href="{{route('home')}}"> Home</a>
                             </li>
                             <li>
-                              <a href="#"> My Page</a>
+                              <a href="{{route('user.page')}}"> My Page</a>
                             </li>
-                            <li>
+                            <li>d
                               <a href="{{route('user.visitors',Auth::user())}}"> My Visitors</a>
                             </li>
                             <li>

@@ -120,7 +120,7 @@
                                 </button>
 
                               </div>
-                              <a href="{{route('visits.all')}}"> Cancel</a>
+                              <a href="{{route('user.visits',Auth::user())}}"> Cancel</a>
                         </div>
                     </form>
                 </div>
